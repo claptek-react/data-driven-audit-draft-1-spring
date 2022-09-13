@@ -2,8 +2,12 @@ package com.AMS.amsSystem.controller;
 
 import java.io.IOException;
 import java.sql.SQLException;
-
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
+
+import javax.servlet.http.HttpServletResponse;
 
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,11 +22,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.AMS.amsSystem.Download.DownloadPDF;
 import com.AMS.amsSystem.Download.ProcessDataExcelSheet;
 import com.AMS.amsSystem.Model.ProcessData;
-import com.AMS.amsSystem.Model.Workflow;
 import com.AMS.amsSystem.Repository.ProcessDataRepository;
-import com.AMS.amsSystem.Repository.WorkflowRepository;
+import com.lowagie.text.DocumentException;
 
 
 
@@ -35,13 +39,9 @@ public class ProcessDataController {
 	
 	
     @Autowired
-	private ProcessDataRepository processDataRepository;  
+	private ProcessDataRepository processDataRepository;    
     
-    @Autowired
-    private WorkflowRepository workflowRepository;
-    
-    
-    @GetMapping("Process")
+    @GetMapping("FetchProcess")
    	public List<ProcessData> getAllData(){
    		return this.processDataRepository.findAll();
    	}
@@ -57,19 +57,13 @@ public class ProcessDataController {
 //		ProcessData processData = processDataRepository.saveAndFlush(newData);		
 //	}
 	
-	@PutMapping("process")
+	@PutMapping("SubmitProcess")
 	public ProcessData updateProcess(@RequestBody ProcessData newData)
 	{
-		logger.error("inside updateProcess Function newData = " + newData.toString());
-		ProcessData data = processDataRepository.saveAndFlush(newData);
-		List<Workflow> work = workflowRepository.findByFormId("FORM-101");
-		work.forEach((wor) -> {
-			logger.error("wor => " + wor.getProcedureName());
-			processDataRepository.pushDataToWorkflow(newData.getpId(),newData.getInstanceId(),
-					newData.getObjId(),"INIT",newData.getStatus(),wor.getProcedureName(),"FORM-102");
-		});
-		logger.error("inside updateProcess Function work = " + work.toString());
 		
+		logger.error("newData = " + newData.toString());
+		
+		ProcessData data = processDataRepository.saveAndFlush(newData);
 		return data;
 	}
 	
@@ -80,7 +74,7 @@ public class ProcessDataController {
 	    ProcessDataExcelSheet.writeToExcel(list,"ProcessData" + ".xlsx");
 	  }
 	
-	
+//	
 //    @GetMapping("pdf/Process")
 //	public void generatePdf(HttpServletResponse response) throws DocumentException, IOException {
 //
@@ -99,7 +93,7 @@ public class ProcessDataController {
 //
 //
 //    }
-    
+//    
     
     	
 }

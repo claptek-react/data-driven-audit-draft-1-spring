@@ -33,7 +33,7 @@ public class RiskDataController {
 	@Autowired
 	private RiskDataRepository riskDataRepository;
 	
-	@GetMapping("Risk")
+	@GetMapping("FetchRisk")
 	public List<RiskData> getAllData(){
 		return this.riskDataRepository.findAll();
 	}
@@ -46,7 +46,7 @@ public class RiskDataController {
 //		
 //	}
 	
-	@PutMapping("risk")
+	@PutMapping("SubmitRisk")
 	public RiskData updateRisk(@RequestBody RiskData newData)
 	{
 		

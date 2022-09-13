@@ -38,6 +38,21 @@ public class FieldsData {
 	
 	@Column(name ="IS_SELECT")
 	private String isSelect;
+	
+	@Column(name="DISPLAY_FIELD")
+	private String displayField;
+	
+	@Column(name="READONLY_FIELD")
+	private String readonlyFields;
+	
+	@Column(name="MANDATORY_FIELD")
+	private String mandatoryFields;
+	
+    @Column (name="HEIGHT_OF_FIELD")
+    private String heightOfField;
+    
+    @Column(name="WIDTH_OF_FIELD")
+    private String widthOfField;
 
 	public int getSrId() {
 		return srId;
@@ -111,8 +126,49 @@ public class FieldsData {
 		this.isSelect = isSelect;
 	}
 
+	public String getDisplayField() {
+		return displayField;
+	}
+
+	public void setDisplayField(String displayField) {
+		this.displayField = displayField;
+	}
+
+	public String getReadonlyFields() {
+		return readonlyFields;
+	}
+
+	public void setReadonlyFields(String readonlyFields) {
+		this.readonlyFields = readonlyFields;
+	}
+
+	public String getMandatoryFields() {
+		return mandatoryFields;
+	}
+
+	public void setMandatoryFields(String mandatoryFields) {
+		this.mandatoryFields = mandatoryFields;
+	}
+
+	public String getHeightOfField() {
+		return heightOfField;
+	}
+
+	public void setHeightOfField(String heightOfField) {
+		this.heightOfField = heightOfField;
+	}
+
+	public String getWidthOfField() {
+		return widthOfField;
+	}
+
+	public void setWidthOfField(String widthOfField) {
+		this.widthOfField = widthOfField;
+	}
+
 	public FieldsData(int srId, String formId, String fieldID, String formName, String fieldLableValue,
-			String fieldStoreValue, String fieldType, String fieldCategory, String isSelect) {
+			String fieldStoreValue, String fieldType, String fieldCategory, String isSelect, String displayField,
+			String readonlyFields, String mandatoryFields, String heightOfField, String widthOfField) {
 		super();
 		this.srId = srId;
 		this.formId = formId;
@@ -123,12 +179,20 @@ public class FieldsData {
 		this.fieldType = fieldType;
 		this.fieldCategory = fieldCategory;
 		this.isSelect = isSelect;
+		this.displayField = displayField;
+		this.readonlyFields = readonlyFields;
+		this.mandatoryFields = mandatoryFields;
+		this.heightOfField = heightOfField;
+		this.widthOfField = widthOfField;
 	}
 
 	public FieldsData() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+
+    
+	
 
 	
 	

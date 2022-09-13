@@ -25,12 +25,12 @@ public class FieldController {
 		private FieldRepository fieldRepository;
 	    
 	    
-	    @GetMapping("Field")
+	    @GetMapping("FetchField")
 	   	public List<FieldsData> getAllData(){
 	   		return this.fieldRepository.findAll();
 	   	}
 	    
-	    @GetMapping("Field/{formId}")
+	    @GetMapping("FetchField/{formId}")
 		public List<FieldsData> getData(@PathVariable String formId) {
 			logger.error("Inside controler");
 			return fieldRepository.findByFormId(formId);

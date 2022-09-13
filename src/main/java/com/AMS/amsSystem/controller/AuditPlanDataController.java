@@ -30,11 +30,15 @@ public class AuditPlanDataController {
    	}
     
 
+    
 	@PostMapping(path ="auditPlan",
 			consumes = MediaType.APPLICATION_JSON_VALUE,
-			produces =MediaType.APPLICATION_JSON_VALUE)
+			produces = MediaType.APPLICATION_JSON_VALUE)
 	public void createProcess(@RequestBody AuditPlanData newData) {
-		AuditPlanData auditPlanData = auditPlanDataRepository.save(newData);		
+		AuditPlanData auditPlanData = auditPlanDataRepository.save(newData);	
+				
+		
+		
 	}
 
 }

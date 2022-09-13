@@ -32,7 +32,7 @@ public class TestDataController {
 	@Autowired
 	private TestDataRepository testDataRepository;
 	
-	@GetMapping("Test")
+	@GetMapping("FetchTest")
 	public List<TestData> getAllData(){
 		return this.testDataRepository.findAll();
 	}
@@ -46,7 +46,7 @@ public class TestDataController {
 //	
 //	}
 	
-	@PutMapping("test")
+	@PutMapping("SubmitTest")
 	public TestData updateTest(@RequestBody TestData newData)
 	{
 		

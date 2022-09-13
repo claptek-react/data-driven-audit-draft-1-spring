@@ -32,7 +32,7 @@ public class ControlDataController {
 	@Autowired
 	private ControlDataRepository controlDataRepository;
 	
-	@GetMapping("Control")
+	@GetMapping("FetchControl")
 	public List<ControlData> getAllData(){
 		return this.controlDataRepository.findAll();
 	}
@@ -46,7 +46,7 @@ public class ControlDataController {
 //		
 //	}
 	
-	@PutMapping("control")
+	@PutMapping("SubmitControl")
 	public ControlData updateControl(@RequestBody ControlData newData)
 	{
 		

@@ -32,11 +32,11 @@ public class DownloadPDF {
 		
 		document.open();
 		
-		Font fontTiltle = FontFactory.getFont(FontFactory.TIMES_ROMAN);
+		Font fontTitle = FontFactory.getFont(FontFactory.TIMES_ROMAN);
 		
-		fontTiltle.setSize(20);
+		fontTitle.setSize(20);
 		
-		Paragraph paragraph = new Paragraph("Process Data Report", fontTiltle);
+		Paragraph paragraph = new Paragraph("Process Data Report", fontTitle);
 		
 		paragraph.setAlignment(Paragraph.ALIGN_CENTER);
 		
@@ -107,9 +107,17 @@ public class DownloadPDF {
 		
 		document.add(table);
 		document.close();
+		
 
 }
 
+
+	public void setProcessData(List<ProcessData> processData2) {
+		
+	}
+
+
+	
 
 	
 

@@ -25,13 +25,13 @@ public class OrgDataController {
 	@Autowired
 	private OrgDataRepository orgDataRepository;
 	
-	@GetMapping("Org")
+	@GetMapping("FetchOrg")
 	public List<OrgData> getAllData(){
 		return this.orgDataRepository.findAll();
 		
 	}
 	
-	@PostMapping(path ="org",
+	@PostMapping(path ="SubmitOrg",
 			produces = MediaType.APPLICATION_JSON_VALUE,
 			consumes = MediaType.APPLICATION_JSON_VALUE)
 	public void create(@RequestBody OrgData newData) {

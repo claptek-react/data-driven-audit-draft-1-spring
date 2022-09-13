@@ -25,6 +25,7 @@ public class SaveTestController {
 	
 	 final org.slf4j.Logger logger = LoggerFactory.getLogger(SaveTestController.class);
 
+
 		
 		@PutMapping("SaveTest")
 		public SaveTestData updateSaveTest(@RequestBody SaveTestData newData)
@@ -34,5 +35,6 @@ public class SaveTestController {
 			SaveTestData data = saveTestRepository.saveAndFlush(newData);
 			return data;
 		}
+		
 }
 	

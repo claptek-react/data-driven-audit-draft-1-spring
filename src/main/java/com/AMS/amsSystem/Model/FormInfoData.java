@@ -18,6 +18,9 @@ public class FormInfoData {
 	
 	@Column(name="FORM_INFO")
 	private String formInfo;
+	
+	@Column(name="NAV_ELEMENT_ID")
+	private String navElementId;
 
 	public String getFormId() {
 		return formId;
@@ -43,11 +46,20 @@ public class FormInfoData {
 		this.formInfo = formInfo;
 	}
 
-	public FormInfoData(String formId, String formName, String formInfo) {
+	public String getNavElementId() {
+		return navElementId;
+	}
+
+	public void setNavElementId(String navElementId) {
+		this.navElementId = navElementId;
+	}
+
+	public FormInfoData(String formId, String formName, String formInfo, String navElementId) {
 		super();
 		this.formId = formId;
 		this.formName = formName;
 		this.formInfo = formInfo;
+		this.navElementId = navElementId;
 	}
 
 	public FormInfoData() {
@@ -55,11 +67,6 @@ public class FormInfoData {
 		// TODO Auto-generated constructor stub
 	}
 
-	
-	
-	
-	
-	
 	
 
 }
