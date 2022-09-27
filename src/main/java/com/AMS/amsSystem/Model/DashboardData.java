@@ -31,6 +31,12 @@ public class DashboardData {
 	@Column(name="BACKGROUND")
 	private String background;
 
+	@Column(name="LEGEND_POS")
+	private String legendPos;
+	
+	@Column(name="LEGEND_ALIGN")
+	private String legendAlign;
+
 	public String getId() {
 		return id;
 	}
@@ -87,8 +93,24 @@ public class DashboardData {
 		this.background = background;
 	}
 
+	public String getLegendPos() {
+		return legendPos;
+	}
+
+	public void setLegendPos(String legendPos) {
+		this.legendPos = legendPos;
+	}
+
+	public String getLegendAlign() {
+		return legendAlign;
+	}
+
+	public void setLegendAlign(String legendAlign) {
+		this.legendAlign = legendAlign;
+	}
+
 	public DashboardData(String id, String lables, String indexAxis, String titleDisplay, String titleText,
-			String legendDisplay, String background) {
+			String legendDisplay, String background, String legendPos, String legendAlign) {
 		super();
 		this.id = id;
 		this.lables = lables;
@@ -97,6 +119,8 @@ public class DashboardData {
 		this.titleText = titleText;
 		this.legendDisplay = legendDisplay;
 		this.background = background;
+		this.legendPos = legendPos;
+		this.legendAlign = legendAlign;
 	}
 
 	public DashboardData() {
@@ -105,8 +129,4 @@ public class DashboardData {
 	}
 	
 	
-	
-	
-	
-
 }

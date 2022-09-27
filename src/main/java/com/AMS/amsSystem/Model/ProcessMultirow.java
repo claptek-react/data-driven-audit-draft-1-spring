@@ -9,10 +9,10 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="DD_GRC_PROCESS_ABC")
-public class ProcessABC {
+public class ProcessMultirow {
 	
 	@Id 
-    @GeneratedValue (strategy = GenerationType.AUTO)
+    @GeneratedValue (strategy = GenerationType.IDENTITY)
 	@Column(name="MU_ABC_KEY")
     private int muABCKey;
 	
@@ -57,7 +57,7 @@ public class ProcessABC {
 		this.fieldValue = fieldValue;
 	}
 
-	public ProcessABC(int muABCKey, String objId, String field, String fieldValue) {
+	public ProcessMultirow(int muABCKey, String objId, String field, String fieldValue) {
 		super();
 		this.muABCKey = muABCKey;
 		this.objId = objId;
@@ -65,7 +65,7 @@ public class ProcessABC {
 		this.fieldValue = fieldValue;
 	}
 
-	public ProcessABC() {
+	public ProcessMultirow() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -78,9 +78,5 @@ public class ProcessABC {
 				+ hashCode() + ", toString()=" + super.toString() + "]";
 	}
 
-		
-	
-		
-	
 	
 }

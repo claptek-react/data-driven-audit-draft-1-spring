@@ -11,7 +11,7 @@ import javax.persistence.Table;
 @Table (name ="DD_GRC_PROCESS")
 public class ProcessData {
 	
-//        @Id
+//      @Id
         @Column (name ="OBJ_ID")
         private String objId;
 
@@ -44,6 +44,7 @@ public class ProcessData {
         
         @Column (name ="CATEGORY")
         private String category;
+        
         
         @Column (name =" BUISNESS_CRITICALITY")
         private String buisnessCriticality;
@@ -252,7 +253,18 @@ public class ProcessData {
 			super();
 			// TODO Auto-generated constructor stub
 		}
-        
-        
 
+		@Override
+		public String toString() {
+			return "ProcessData [objId=" + objId + ", objTitle=" + objTitle + ", validFrom=" + validFrom
+					+ ", validUntil=" + validUntil + ", ownerOrganisation=" + ownerOrganisation + ", owner=" + owner
+					+ ", level1Approver=" + level1Approver + ", level2Approver=" + level2Approver + ", relationships="
+					+ relationships + ", status=" + status + ", category=" + category + ", buisnessCriticality="
+					+ buisnessCriticality + ", createdOn=" + createdOn + ", createdBy=" + createdBy + ", modifiedBy="
+					+ modifiedBy + ", modifiedOn=" + modifiedOn + ", pId=" + pId + ", instanceId=" + instanceId
+					+ ", approver=" + approver + "]";
+		}
+
+		
+		
 }

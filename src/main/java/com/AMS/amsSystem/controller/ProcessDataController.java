@@ -25,7 +25,9 @@ import org.springframework.web.bind.annotation.RestController;
 import com.AMS.amsSystem.Download.DownloadPDF;
 import com.AMS.amsSystem.Download.ProcessDataExcelSheet;
 import com.AMS.amsSystem.Model.ProcessData;
+import com.AMS.amsSystem.Model.Workflow;
 import com.AMS.amsSystem.Repository.ProcessDataRepository;
+import com.AMS.amsSystem.Repository.WorkflowRepository;
 import com.lowagie.text.DocumentException;
 
 
@@ -39,7 +41,10 @@ public class ProcessDataController {
 	
 	
     @Autowired
-	private ProcessDataRepository processDataRepository;    
+	private ProcessDataRepository processDataRepository;  
+    
+    @Autowired
+	private WorkflowRepository workflowRepository;  
     
     @GetMapping("FetchProcess")
    	public List<ProcessData> getAllData(){
@@ -60,10 +65,17 @@ public class ProcessDataController {
 	@PutMapping("SubmitProcess")
 	public ProcessData updateProcess(@RequestBody ProcessData newData)
 	{
+		String submitFlow = "";
+		logger.error("newData submit process = " + newData.toString());
+		List<Workflow> workflow = workflowRepository.findByFormId("FORM-101");
+		for(Workflow name : workflow)
+		{
+			submitFlow = name.getProcedureName();
+		}
 		
-		logger.error("newData = " + newData.toString());
-		
+		logger.error("submitFlow = " + submitFlow);
 		ProcessData data = processDataRepository.saveAndFlush(newData);
+		processDataRepository.runWorkflow(submitFlow, "FORM-101", newData.getpId(), newData.getInstanceId(), newData.getObjId(), newData.getStatus(), newData.getStatus());
 		return data;
 	}
 	

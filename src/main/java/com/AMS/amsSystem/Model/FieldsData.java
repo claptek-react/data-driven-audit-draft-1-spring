@@ -2,6 +2,8 @@ package com.AMS.amsSystem.Model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -38,21 +40,21 @@ public class FieldsData {
 	
 	@Column(name ="IS_SELECT")
 	private String isSelect;
-	
+
 	@Column(name="DISPLAY_FIELD")
 	private String displayField;
 	
 	@Column(name="READONLY_FIELD")
-	private String readonlyFields;
+	private String readOnlyField;
 	
 	@Column(name="MANDATORY_FIELD")
-	private String mandatoryFields;
+	private String mandatoryField;
 	
-    @Column (name="HEIGHT_OF_FIELD")
-    private String heightOfField;
-    
-    @Column(name="WIDTH_OF_FIELD")
-    private String widthOfField;
+	@Column(name="HEIGHT_OF_FIELD")
+	private String heightOfField;
+	
+	@Column(name="WIDTH_OF_FIELD")
+	private String widthOfField;
 
 	public int getSrId() {
 		return srId;
@@ -134,20 +136,20 @@ public class FieldsData {
 		this.displayField = displayField;
 	}
 
-	public String getReadonlyFields() {
-		return readonlyFields;
+	public String getReadOnlyField() {
+		return readOnlyField;
 	}
 
-	public void setReadonlyFields(String readonlyFields) {
-		this.readonlyFields = readonlyFields;
+	public void setReadOnlyField(String readOnlyField) {
+		this.readOnlyField = readOnlyField;
 	}
 
-	public String getMandatoryFields() {
-		return mandatoryFields;
+	public String getMandatoryField() {
+		return mandatoryField;
 	}
 
-	public void setMandatoryFields(String mandatoryFields) {
-		this.mandatoryFields = mandatoryFields;
+	public void setMandatoryField(String mandatoryField) {
+		this.mandatoryField = mandatoryField;
 	}
 
 	public String getHeightOfField() {
@@ -168,7 +170,7 @@ public class FieldsData {
 
 	public FieldsData(int srId, String formId, String fieldID, String formName, String fieldLableValue,
 			String fieldStoreValue, String fieldType, String fieldCategory, String isSelect, String displayField,
-			String readonlyFields, String mandatoryFields, String heightOfField, String widthOfField) {
+			String readOnlyField, String mandatoryField, String heightOfField, String widthOfField) {
 		super();
 		this.srId = srId;
 		this.formId = formId;
@@ -180,8 +182,8 @@ public class FieldsData {
 		this.fieldCategory = fieldCategory;
 		this.isSelect = isSelect;
 		this.displayField = displayField;
-		this.readonlyFields = readonlyFields;
-		this.mandatoryFields = mandatoryFields;
+		this.readOnlyField = readOnlyField;
+		this.mandatoryField = mandatoryField;
 		this.heightOfField = heightOfField;
 		this.widthOfField = widthOfField;
 	}
@@ -190,13 +192,7 @@ public class FieldsData {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-
-    
 	
-
-	
-	
-		
 	
 }
 

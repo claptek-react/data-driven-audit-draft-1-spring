@@ -6,13 +6,13 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name ="DD_FIELD_VALUE")
-public class FieldValueData {
+@Table(name ="DD_FIELD_DROPDOWN")
+public class FieldDropdownData {
+	
 	
 	@Id
 	@Column(name ="FIELD_VALUE_ID")
-	private String id;
-
+	private int id;
 	
 	@Column(name ="FORM_ID")
 	private String formId;
@@ -29,11 +29,11 @@ public class FieldValueData {
 	@Column(name ="FIELD_ID")
 	private int field_id;
 
-	public String getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
@@ -77,7 +77,7 @@ public class FieldValueData {
 		this.field_id = field_id;
 	}
 
-	public FieldValueData(String id, String formId, String formName, String fieldStoredValue, String fieldOptions,
+	public FieldDropdownData(int id, String formId, String formName, String fieldStoredValue, String fieldOptions,
 			int field_id) {
 		super();
 		this.id = id;
@@ -88,12 +88,11 @@ public class FieldValueData {
 		this.field_id = field_id;
 	}
 
-	public FieldValueData() {
+	public FieldDropdownData() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	
 	
 	
 	

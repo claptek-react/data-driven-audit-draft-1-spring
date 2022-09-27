@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.AMS.amsSystem.Model.ApiRepoManagemet;
-import com.AMS.amsSystem.Model.FieldValueData;
+import com.AMS.amsSystem.Model.FieldDropdownData;
 import com.AMS.amsSystem.Repository.ApiRepoManagementRepository;
 
 @CrossOrigin(origins ="*")
@@ -27,10 +27,10 @@ public class ApiRepoManagementController {
 		return this.apiRepoManagemetRepository.findAll();
 	}
 	
-	@GetMapping("apiManagement/{apiId}")
-	public List<ApiRepoManagemet> getData(@PathVariable String apiId) {
+	@GetMapping("apiManagement/{objectId}")
+	public List<ApiRepoManagemet> getData(@PathVariable String objectId) {
 //		logger.error("Inside controler");
-		return apiRepoManagemetRepository.findByapiId(apiId);
+		return apiRepoManagemetRepository.findByObjectId(objectId);
 	}
 	
 	

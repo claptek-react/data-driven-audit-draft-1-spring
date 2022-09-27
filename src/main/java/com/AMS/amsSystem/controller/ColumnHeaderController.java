@@ -9,24 +9,24 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.AMS.amsSystem.Model.FormConfig;
-import com.AMS.amsSystem.Repository.FormConfigRepository;
+import com.AMS.amsSystem.Model.ColumnHeader;
+import com.AMS.amsSystem.Repository.ColumnHeaderRepository;
 
 @CrossOrigin(origins ="*")
 @RestController
 @RequestMapping("audit/")
-public class FormConfigController {
+public class ColumnHeaderController {
 	
 	@Autowired
-	private FormConfigRepository formConfigRepository;
+	private ColumnHeaderRepository formConfigRepository;
 	                                        
 	@GetMapping("FormConfig")
-	public List<FormConfig> getData() {
+	public List<ColumnHeader> getData() {
 		return this.formConfigRepository.findAll();
 	}
 	
 	@GetMapping("FormConfig/{formId}")
-	public List<FormConfig> getData(@PathVariable String formId) {
+	public List<ColumnHeader> getData(@PathVariable String formId) {
 //		logger.error("Inside controler");
 		return formConfigRepository.findByFormId(formId);
 	}

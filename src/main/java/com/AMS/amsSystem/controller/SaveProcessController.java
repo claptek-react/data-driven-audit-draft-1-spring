@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.AMS.amsSystem.Model.ProcessData;
@@ -38,6 +39,7 @@ public class SaveProcessController {
 		SaveProcessData data = saveProcessRepository.saveAndFlush(newData);
 		return data;
 	}
+	
 	
 	@GetMapping("ProcessSave")
    	public List<SaveProcessData> getAllData11(){

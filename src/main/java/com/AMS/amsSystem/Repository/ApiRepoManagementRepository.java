@@ -8,6 +8,7 @@ import com.AMS.amsSystem.Model.ApiRepoManagemet;
 
 public interface ApiRepoManagementRepository  extends JpaRepository<ApiRepoManagemet, String>{
 
-	List<ApiRepoManagemet> findByapiId(String apiId);
+
+	List<ApiRepoManagemet> findByObjectId(String objectId);
 
 }

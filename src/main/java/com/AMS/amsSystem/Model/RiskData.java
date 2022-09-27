@@ -244,13 +244,17 @@ public class RiskData {
 		// TODO Auto-generated constructor stub
 	}
 
+	@Override
+	public String toString() {
+		return "RiskData [objId=" + objId + ", objTitle=" + objTitle + ", validFrom=" + validFrom + ", validUntil="
+				+ validUntil + ", ownerOrganisation=" + ownerOrganisation + ", owner=" + owner + ", level1Approver="
+				+ level1Approver + ", level2Approver=" + level2Approver + ", relationships=" + relationships
+				+ ", status=" + status + ", category=" + category + ", createdOn=" + createdOn + ", createdBy="
+				+ createdBy + ", modifiedBy=" + modifiedBy + ", modifiedOn=" + modifiedOn + ", pId=" + pId
+				+ ", instanceId=" + instanceId + ", approver=" + approver + "]";
+	}
 	
-     
-     
+	
 
 	
-    
-	
-	
-     
 }

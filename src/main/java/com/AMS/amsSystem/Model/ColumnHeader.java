@@ -7,8 +7,8 @@ import javax.persistence.Table;
 
 
 @Entity
-@Table(name ="DD_CONFIG_FORM")
-public class FormConfig {
+@Table(name ="DD_RPT_COLUMN_HEADER")
+public class ColumnHeader {
 
 	@Id
 	@Column(name ="SR_NO")
@@ -25,12 +25,9 @@ public class FormConfig {
 	
 	@Column(name ="FORM_ID")
 	private String formId;
-	
-	@Column (name="COLUMN_FILTER")
+
+	@Column(name = "COLUMN_FILTER")
 	private String columnFilter;
-	
-	@Column (name="FILTER")
-	private String filter;
 
 	public String getSrNo() {
 		return srNo;
@@ -80,20 +77,8 @@ public class FormConfig {
 		this.columnFilter = columnFilter;
 	}
 
-	
-
-	public String getFilter() {
-		return filter;
-	}
-
-	public void setFilter(String filter) {
-		this.filter = filter;
-	}
-	
-	
-
-	public FormConfig(String srNo, String formName, String fieldName, String accessor, String formId,
-			String columnFilter, String filter) {
+	public ColumnHeader(String srNo, String formName, String fieldName, String accessor, String formId,
+			String columnFilter) {
 		super();
 		this.srNo = srNo;
 		this.formName = formName;
@@ -101,18 +86,12 @@ public class FormConfig {
 		this.accessor = accessor;
 		this.formId = formId;
 		this.columnFilter = columnFilter;
-		this.filter = filter;
 	}
 
-	public FormConfig() {
+	public ColumnHeader() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 	
-
-	
-	
-	
-    
 	
 }

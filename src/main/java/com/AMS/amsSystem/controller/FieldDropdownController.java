@@ -9,28 +9,28 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.AMS.amsSystem.Model.FieldValueData;
-import com.AMS.amsSystem.Repository.FieldValueRepository;
+import com.AMS.amsSystem.Model.FieldDropdownData;
+import com.AMS.amsSystem.Repository.FieldDropdownRepository;
 
 @CrossOrigin(origins ="*")
 @RestController
 @RequestMapping("audit/")
-public class FieldValueController {
+public class FieldDropdownController {
 	
 	
 //	final org.slf4j.Logger logger = LoggerFactory.getLogger(FormSectionController.class);
 
 	
 	@Autowired
-	private FieldValueRepository fieldValueRepository;
+	private FieldDropdownRepository fieldValueRepository;
 	                                        
 	@GetMapping("FieldValue")
-	public List<FieldValueData> getData() {
+	public List<FieldDropdownData> getData() {
 		return this.fieldValueRepository.findAll();
 	}
 	
 	@GetMapping("FieldValue/{formId}")
-	public List<FieldValueData> getData(@PathVariable String formId) {
+	public List<FieldDropdownData> getData(@PathVariable String formId) {
 //		logger.error("Inside controler");
 		return fieldValueRepository.findByFormId(formId);
 	}

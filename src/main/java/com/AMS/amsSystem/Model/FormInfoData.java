@@ -18,9 +18,21 @@ public class FormInfoData {
 	
 	@Column(name="FORM_INFO")
 	private String formInfo;
-	
+
 	@Column(name="NAV_ELEMENT_ID")
 	private String navElementId;
+
+	@Column(name="NAVIGATE")
+	private String navigate;
+
+	@Column(name ="BTN_VISIBILITY")
+	private String btnVisibility;
+
+	@Column (name="API_ID")
+	private String apiId;
+
+	@Column(name="ISREPORT")
+	private String isReport;
 
 	public String getFormId() {
 		return formId;
@@ -54,19 +66,55 @@ public class FormInfoData {
 		this.navElementId = navElementId;
 	}
 
-	public FormInfoData(String formId, String formName, String formInfo, String navElementId) {
+	public String getNavigate() {
+		return navigate;
+	}
+
+	public void setNavigate(String navigate) {
+		this.navigate = navigate;
+	}
+
+	public String getBtnVisibility() {
+		return btnVisibility;
+	}
+
+	public void setBtnVisibility(String btnVisibility) {
+		this.btnVisibility = btnVisibility;
+	}
+
+	public String getApiId() {
+		return apiId;
+	}
+
+	public void setApiId(String apiId) {
+		this.apiId = apiId;
+	}
+
+	public String getIsReport() {
+		return isReport;
+	}
+
+	public void setIsReport(String isReport) {
+		this.isReport = isReport;
+	}
+
+	public FormInfoData(String formId, String formName, String formInfo, String navElementId, String navigate,
+			String btnVisibility, String apiId, String isReport) {
 		super();
 		this.formId = formId;
 		this.formName = formName;
 		this.formInfo = formInfo;
 		this.navElementId = navElementId;
+		this.navigate = navigate;
+		this.btnVisibility = btnVisibility;
+		this.apiId = apiId;
+		this.isReport = isReport;
 	}
 
 	public FormInfoData() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-
 	
-
+	
 }
